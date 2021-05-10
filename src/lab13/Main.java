@@ -18,11 +18,11 @@ public class Main {
         IService service = new Service();
 
         List<Enrollee> enrolless = new ArrayList<>();
-        enrolless.add(new Enrollee("Vovk", 80.0));
-        enrolless.add(new Enrollee("Horduz", 75.0));
+        enrolless.add(new Enrollee("Vovk", 77.0));
+        enrolless.add(new Enrollee("Horduz", 82.0));
         enrolless.add(new Enrollee("Sachko1", 90.0));
         enrolless.add(new Enrollee("Sachko2", 82.0));
-        enrolless.add(new Enrollee("Chaban", 76.0));
+        enrolless.add(new Enrollee("Chaban", 78.0));
         enrolless.add(new Enrollee("Bukasov", 83.0));
         enrolless.add(new Enrollee("Korol", 95.0));
         enrolless.add(new Enrollee("SomeLooser1", 59.0));
