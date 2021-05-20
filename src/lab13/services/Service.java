@@ -9,7 +9,7 @@ import lab13.models.University;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class Service implements IService {
 
@@ -24,17 +24,11 @@ public class Service implements IService {
 
     @Override
     public void task2(University university) {
-
-        int numOfStudents = university.getFaculties().stream()
-                .mapToInt(faculty -> faculty.getStudents().size())
-                .reduce(0, Integer::sum);
-
-        double sumOfAllRatings = university.getFaculties().stream()
+        double avgRating = university.getFaculties().stream()
                 .flatMap(faculty -> faculty.getStudents().stream())
                 .mapToDouble(Student::getRating)
-                .reduce(0, Double::sum);
-
-        double avgRating = sumOfAllRatings / numOfStudents;
+                .average()
+                .orElse(0);
 
         System.out.println("Average rating is " + avgRating);
         university.getFaculties().stream()

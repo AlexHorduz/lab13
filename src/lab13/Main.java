@@ -7,16 +7,15 @@ import lab13.models.University;
 import lab13.services.IService;
 import lab13.services.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
 public class Main {
 
     public static void main(String[] args) {
-        IService service = new Service();
 
+
+
+        IService service = new Service();
         List<Enrollee> enrolless = new ArrayList<>();
         enrolless.add(new Enrollee("Vovk", 77.0));
         enrolless.add(new Enrollee("Horduz", 82.0));
@@ -42,13 +41,13 @@ public class Main {
         FAM.addStudent(new Student("Illia", "Ustymenko", "5", 87.13));
         FAM.addStudent(new Student("Andriy", "Dunets", "6", 86.99));
         Faculty FICT = new Faculty("FICT");
-        FICT.addStudent(new Student("Danylo", "Sachko", "7", 94.00 ));
-        FICT.addStudent(new Student("Vladyslav", "Kuksiuk", "8", 99.17 ));
-        FICT.addStudent(new Student("Oleksandr", "Horduz", "9", 99.33 ));
-        FICT.addStudent(new Student("Dmytro", "Sachko", "10", 95.17 ));
-        FICT.addStudent(new Student("Oleksandr", "Dudchenko", "11", 97.0 ));
-        FICT.addStudent(new Student("Ksenia", "Ivanchenko", "12", 96.67 ));
-        FICT.addStudent(new Student("Dmytro", "Ochkas", "13", 96.0 ));
+        FICT.addStudent(new Student("Danylo", "Sachko", "7", 94.00));
+        FICT.addStudent(new Student("Vladyslav", "Kuksiuk", "8", 99.17));
+        FICT.addStudent(new Student("Oleksandr", "Horduz", "9", 99.33));
+        FICT.addStudent(new Student("Dmytro", "Sachko", "10", 95.17));
+        FICT.addStudent(new Student("Oleksandr", "Dudchenko", "11", 97.0));
+        FICT.addStudent(new Student("Ksenia", "Ivanchenko", "12", 96.67));
+        FICT.addStudent(new Student("Dmytro", "Ochkas", "13", 96.0));
         kpi.addFaculty(FAM);
         kpi.addFaculty(FICT);
 
@@ -60,5 +59,11 @@ public class Main {
         System.out.println("Task3 (getting all enrollees rating of which is lower than 60 points:");
         service.task3(enrolless)
                 .forEach(System.out::println);
+
+
+
+        IntStream s = IntStream.iterate(1, i -> i + 1);
+
+
     }
 }
